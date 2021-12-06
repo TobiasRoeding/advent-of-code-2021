@@ -1,3 +1,5 @@
+[![build](https://github.com/TobiasRoeding/advent-of-code-2021/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/TobiasRoeding/advent-of-code-2021/actions/workflows/build.yml)
+
 # Advent of Code 2021
 Python solutions for the advent of code 2021
 
