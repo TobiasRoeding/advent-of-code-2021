@@ -7,9 +7,12 @@ name = "pypi"
 
 [dev-packages]
 pytest = "*"
+black = "*"
+isort = "*"
+flake8 = "*"
+mypy = "*"
+pre-commit = "*"
+pytest-cov = "*"
 
 [requires]
 python_version = "3.9"
-
-[scripts]
-test = "pytest"

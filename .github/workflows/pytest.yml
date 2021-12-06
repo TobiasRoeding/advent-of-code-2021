@@ -1,6 +1,13 @@
-# .github/workflows/app.yaml
-name: PyTest
-on: push
+name: build
+on: 
+  push:
+    branches:
+      - 'master'
+    tags:
+      - '**'
+  pull_requests:
+    branches:
+      - '**'
 
 jobs:
   test:
@@ -15,7 +22,7 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v2
         with:
-          python-version: "3.x"
+          python-version: "3.9"
 
       - name: Install pipenv
         run: |
@@ -30,6 +37,20 @@ jobs:
         if: steps.cache-pipenv.outputs.cache-hit != 'true'
         run: |
           pipenv install --deploy --dev
+
+      - name: Run format checks
+        run: |
+          pipenv run black .
+          pipenv run isort .
+
+      - name: Run linter (flake8)
+        run: |
+          pipenv run flake8 -v
+
+      - name: Run type check
+        run: |
+          pipenv run mypy
+
       - name: Run test suite
         run: |
           pipenv run test -v
