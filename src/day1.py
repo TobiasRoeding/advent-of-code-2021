@@ -2,12 +2,11 @@ from src.utils import read_file_as_int_array
 
 
 class Day1:
-    def __init__(self, input="input/day1.txt"):
+    def __init__(self, input="src/input/day1.txt"):
         self.INPUT = input
 
-    @staticmethod
-    def part1(input):
-        arr = read_file_as_int_array(input)
+    def part1(self):
+        arr = read_file_as_int_array(self.INPUT)
 
         prev = float("inf")
         increases = 0
@@ -18,9 +17,8 @@ class Day1:
 
         return increases
 
-    @staticmethod
-    def part2(input):
-        arr = read_file_as_int_array(input)
+    def part2(self):
+        arr = read_file_as_int_array(self.INPUT)
 
         prev = float("inf")
         increases = 0
@@ -33,8 +31,8 @@ class Day1:
         return increases
 
     def execute(self):
-        print(f"Solution for part 1: {self.part1(self.INPUT)}")
-        print(f"Solution for part 2: {self.part2(self.INPUT)}")
+        print(f"Solution for part 1: {self.part1()}")
+        print(f"Solution for part 2: {self.part2()}")
 
 
 if __name__ == "__main__":

@@ -1,16 +1,16 @@
-from src.day2 import Day2
+from src.day2 import Day2 as DayX
 
 INPUT = "tests/inputs/day2.txt"
 
 
 def test_init():
-    Day2(INPUT)
-    Day2(INPUT).execute()
+    DayX(INPUT)
+    DayX(INPUT).execute()
 
 
 def test_part1():
-    assert Day2.part1(INPUT) == 150
+    assert DayX(INPUT).part1() == 150
 
 
 def test_part2():
-    assert Day2.part2(INPUT) == 900
+    assert DayX(INPUT).part2() == 900

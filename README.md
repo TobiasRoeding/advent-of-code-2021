@@ -14,6 +14,11 @@ pipenv run pre-commit install -t pre-commit
 pipenv run pre-commit install -t pre-push
 ```
 
+## run the solution for a single day
+```
+pipenv run python -m src.day1
+```
+
 ## run pre-commit hook manually
 ```
 pipenv run pre-commit run --all-files
